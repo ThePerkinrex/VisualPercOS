@@ -3,6 +3,7 @@ package window.uiUtils;
 import processing.core.PApplet;
 
 public class Button {
+	
 	protected PApplet sketch;
 	protected int x;
 	protected int y;
@@ -30,5 +31,10 @@ public class Button {
 			r = true;
 		}
 		return r;
+	}
+	
+	public void setPos(float x, float y){
+		this.x = PApplet.round(x);
+		this.y = PApplet.round(y);
 	}
 }

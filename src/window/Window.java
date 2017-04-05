@@ -45,6 +45,7 @@ public abstract class Window {
 	}
 	
 	public void mouseDragged(){
+		mouseDraggedApp();
 		if(sketch.mouseX>x && sketch.mouseX<x+width && sketch.mouseY>y && sketch.mouseY<y+20){
 			int nX = x-(sketch.pmouseX-sketch.mouseX);
 			int nY = y-(sketch.pmouseY-sketch.mouseY);
@@ -54,6 +55,14 @@ public abstract class Window {
 				gy = y+20;
 			}
 		}
+	}
+	
+	protected void mouseDraggedApp(){
+		
+	}
+	
+	public void keyTyped(){
+		
 	}
 	
 	public void update(){

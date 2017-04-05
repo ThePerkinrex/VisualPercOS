@@ -11,16 +11,17 @@ public class TestPercOSApp extends Window {
 
 	@Override
 	protected void updateApp() {
-
+		//For non graphic updates
 	}
 
 	@Override
 	protected void displayApp() {
-
+		//For display updates also
 	}
 
 	@Override
 	public void setup() {
+		//First time the OS runs
 	}
 	
 	

@@ -126,6 +126,7 @@ public class VisualPercOS extends PApplet{
 	public void keyTyped(){
 		userInput.keyTyped();
 		passInput.keyTyped();
+		creUs.keyTyped();
 	}
 	
 	private void drawBg(){
