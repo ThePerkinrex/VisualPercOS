@@ -6,8 +6,8 @@ import processing.core.PConstants;
 public class TextInput {
 	private PApplet sketch;
 	
-	private int x;
-	private int y;
+	public float x;
+	public float y;
 	private int width;
 	private int height;
 	
@@ -15,11 +15,11 @@ public class TextInput {
 	
 	private String value;
 
-	public TextInput(PApplet sketch, int x, int y, int width) {
+	public TextInput(PApplet sketch, float f, float g, int width) {
 		this.sketch = sketch;
 		
-		this.x = x;
-		this.y = y;
+		this.x = f;
+		this.y = g;
 		this.width = width;
 		this.height = 18;
 		

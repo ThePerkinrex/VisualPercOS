@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import defaultApps.Calculator;
+import defaultApps.CreateUser;
 import processing.core.PApplet;
 import processing.core.PImage;
 import window.uiUtils.TextInput;
@@ -24,6 +25,9 @@ public class VisualPercOS extends PApplet{
 	private TextInput passInput;
 	
 	private Calculator test;
+	private CreateUser creUs;
+	
+	private String topApp;
 	
 	private BufferedReader uPF;
 	private ArrayList<String> users;
@@ -49,6 +53,10 @@ public class VisualPercOS extends PApplet{
 		logo = loadImage("SimpleVisualPercOSLogo.png");
 		
 		test = new Calculator(this);
+		
+		creUs = new CreateUser(this);
+		
+		topApp = creUs.toString();
 		
 		uPF = createReader("usrPass.prc");
 		
@@ -102,11 +110,17 @@ public class VisualPercOS extends PApplet{
 			drawMenuBar();
 
 			test.update();
+			
+			creUs.update();
 		}
 	}
 	
 	public void mouseDragged(){
+		if(topApp.equals(test.toString())){
 		test.mouseDragged();
+		}else if(topApp.equals(creUs.toString())){
+		creUs.mouseDragged();
+		}
 	}
 	
 	public void keyTyped(){
