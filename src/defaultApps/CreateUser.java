@@ -1,6 +1,7 @@
 package defaultApps;
 
 import org.percot.helpers.Button;
+import org.percot.helpers.Color;
 
 import processing.core.PApplet;
 import processing.core.PVector;
@@ -45,7 +46,7 @@ public class CreateUser extends Window {
 		conpass.x = x+cpPos.x;
 		conpass.y = gy+cpPos.y;
 		
-		crea.setPos(x+crPos.x, gy+crPos.y);
+		//crea.setPos(x+crPos.x, gy+crPos.y);
 		
 		sketch.fill(255);
 		sketch.rect(x,gy,width,height);
@@ -57,6 +58,7 @@ public class CreateUser extends Window {
 		user.update();
 		pass.update();
 		conpass.update();
+		crea.show(new Color(245), new Color(0));
 	}
 	
 	@Override

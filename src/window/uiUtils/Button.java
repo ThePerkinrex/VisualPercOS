@@ -4,11 +4,11 @@ import processing.core.PApplet;
 
 public class Button {
 	
-	protected PApplet sketch;
-	protected int x;
-	protected int y;
-	protected int height;
-	protected int width;
+	private PApplet sketch;
+	private int x;
+	private int y;
+	private int height;
+	private int width;
 	
 	public Button(PApplet sketch, int x, int y, int height, int width) {
 		this.x = x;
