@@ -1,9 +1,11 @@
 package utils;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Formatter;
 
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
@@ -38,16 +40,22 @@ public class EncryptionUtils {
 			}
 		}
 		
-		PrintWriter output = sketch.createWriter("usrPass.prc");
+		Formatter output = null;
+		try {
+			output = new Formatter("usrPass.prc");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		for(String perm:perms){
 			int i = perms.indexOf(perm);
 			System.out.println("LOOP ---- " + users.get(i) + "-" + passes.get(i) + "-" + perm);
-			output.println(users.get(i) + "-" + passes.get(i) + "-" + perm);
+			output.format(users.get(i) + "-" + passes.get(i) + "-" + perm);
 		}
 		
 		System.out.println("ADD ---- " + user + "-" + enPass + "-" + "0");
-		output.println(user + "-" + enPass + "-" + "0");
+		output.format(user + "-" + enPass + "-" + "0");
 		
 		output.flush();
 		output.close();
