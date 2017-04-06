@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.jasypt.util.password.StrongPasswordEncryptor;
 import org.percot.helpers.Button;
 
 import defaultApps.Calculator;
@@ -15,7 +16,7 @@ import window.uiUtils.TextInput;
 public class VisualPercOS extends PApplet{
 	
 	private int state;
-	
+		
 	private PImage bg;
 	private PImage logo;
 	
@@ -32,9 +33,9 @@ public class VisualPercOS extends PApplet{
 	private String topApp;
 	
 	private BufferedReader uPF;
-	private ArrayList<String> users;
-	private ArrayList<String> passes;
-	private ArrayList<String> perms;
+	public ArrayList<String> users;
+	public ArrayList<String> passes;
+	public ArrayList<String> perms;
 
 	public static void main(String[] args) {
 		main("VisualPercOS");
@@ -68,6 +69,8 @@ public class VisualPercOS extends PApplet{
 		
 		userInput = new TextInput(this, 100, 100, 100);
 		passInput = new TextInput(this, 100, 130, 100);
+		
+		
 		
 		while (true){
 			String line[];
